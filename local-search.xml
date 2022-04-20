@@ -4,6 +4,29 @@
   
   
   <entry>
+    <title>Hexo文章的相关操作</title>
+    <link href="/posts/60892.html"/>
+    <url>/posts/60892.html</url>
+    
+    <content type="html"><![CDATA[<h3 id="传统创建文章的方式"><a href="#传统创建文章的方式" class="headerlink" title="传统创建文章的方式"></a>传统创建文章的方式</h3><figure class="highlight gauss"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs gauss">hexo <span class="hljs-keyword">new</span> &lt;<span class="hljs-built_in">title</span>&gt;<br></code></pre></td></tr></table></figure><h3 id="创建草稿"><a href="#创建草稿" class="headerlink" title="创建草稿"></a>创建草稿</h3><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gauss">hexo <span class="hljs-keyword">new</span> draft &lt;<span class="hljs-built_in">title</span>&gt;<br></code></pre></td></tr></table></figure><h3 id="预览草稿"><a href="#预览草稿" class="headerlink" title="预览草稿"></a>预览草稿</h3><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">hexo s <span class="hljs-comment">--draft</span><br></code></pre></td></tr></table></figure><h3 id="发布草稿"><a href="#发布草稿" class="headerlink" title="发布草稿"></a>发布草稿</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml">hexo P <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><br></code></pre></td></tr></table></figure><h3 id="生产静态文件"><a href="#生产静态文件" class="headerlink" title="生产静态文件"></a>生产静态文件</h3><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo g</span><br></code></pre></td></tr></table></figure><h3 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h3><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo d</span><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>hexo</tag>
+      
+      <tag>草稿</tag>
+      
+      <tag>发布</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Java学习-基础</title>
     <link href="/posts/60906.html"/>
     <url>/posts/60906.html</url>
