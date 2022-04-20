@@ -1,0 +1,546 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Dgmico">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Java 学习-基础1. 什么是面向对象，面向对象和面向过程的区别面向对象和面向过程都是一种软件开发思想。 什么是面向对象： 面向对象是把构成问题事物分解成各个对象，分别设计这些对象，然后将它们组装成完整功能的系统。 区别： 面向过程分析出解决问题的步骤，用函数按步骤实现，使用时依次调用就函数；面向对象时用类实现各个功能模块。  2.面向对象三大特性 封装 继承 多态  封装利用 抽象数据类型 将">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java学习-基础">
+<meta property="og:url" content="http://example.com/posts/60906.html">
+<meta property="og:site_name" content="Mico&#39;s">
+<meta property="og:description" content="Java 学习-基础1. 什么是面向对象，面向对象和面向过程的区别面向对象和面向过程都是一种软件开发思想。 什么是面向对象： 面向对象是把构成问题事物分解成各个对象，分别设计这些对象，然后将它们组装成完整功能的系统。 区别： 面向过程分析出解决问题的步骤，用函数按步骤实现，使用时依次调用就函数；面向对象时用类实现各个功能模块。  2.面向对象三大特性 封装 继承 多态  封装利用 抽象数据类型 将">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-04-15T01:50:34.000Z">
+<meta property="article:modified_time" content="2022-04-20T09:33:07.837Z">
+<meta property="article:author" content="Dgmico">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="基础">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="八股文">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  <title>Java学习-基础 - Mico&#39;s</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Mico&#39;s</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Java学习-基础">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-04-15 09:50" pubdate>
+        2022年4月15日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      26 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Java学习-基础</h1>
+            
+            <div class="markdown-body">
+              <h1 id="Java-学习-基础"><a href="#Java-学习-基础" class="headerlink" title="Java 学习-基础"></a>Java 学习-基础</h1><h4 id="1-什么是面向对象，面向对象和面向过程的区别"><a href="#1-什么是面向对象，面向对象和面向过程的区别" class="headerlink" title="1. 什么是面向对象，面向对象和面向过程的区别"></a>1. 什么是面向对象，面向对象和面向过程的区别</h4><p>面向对象和面向过程都是一种软件开发思想。</p>
+<p><strong>什么是面向对象：</strong> 面向对象是把构成问题事物分解成各个对象，分别设计这些对象，然后将它们组装成完整功能的系统。</p>
+<p><strong>区别：</strong> 面向过程分析出解决问题的步骤，用函数按步骤实现，使用时依次调用就函数；面向对象时用类实现各个功能模块。</p>
+<hr>
+<h4 id="2-面向对象三大特性"><a href="#2-面向对象三大特性" class="headerlink" title="2.面向对象三大特性"></a>2.面向对象三大特性</h4><ul>
+<li><a href="######%E5%B0%81%E8%A3%85">封装</a></li>
+<li><a href="######%E7%BB%A7%E6%89%BF">继承</a></li>
+<li><a href="######%E5%A4%9A%E6%80%81">多态</a></li>
+</ul>
+<h6 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h6><p>利用 <strong>抽象数据类型</strong> 将数据和基于数据的操作封装在一起，使其构成一个不可分割的独立实体。数据被保护在 <strong>抽象数据类型</strong> 的内部，尽可能地隐藏内部细节，只保留一些对外接口使之与外部发生联系。用户无需知道对象内部的细节，但可以通过对象对外提供的接口访问该对象。</p>
+<p><strong><em>优点：</em></strong></p>
+<ul>
+<li>减少耦合：可以独立地开发、测试、优化、使用、理解和修改</li>
+<li>减轻维护的负担：可以更容易被程序员理解，并且在调试的时候可以不影响其他模块</li>
+<li>有效的调节性能：可以通过剖析确定哪些模块影响了系统的性能</li>
+<li>提高软件的可重用性</li>
+<li>降低了构建大型系统的风险：即使整个系统不可用，但是这些独立的模块却有可能是可用的</li>
+</ul>
+<h6 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h6><p>继承就是子类继承父类的特征和行为，使得子类（派生类）可以从父类（基类）继承特征和行为，从而使得子类（派生类）可以复用父类（基类）的代码。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-comment">//  父类</span><br><span class="hljs-keyword">class</span> <span class="hljs-title">Animal</span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">eat</span>()</span>&#123;<br>        System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">&quot;吃东西&quot;</span>);<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">//  子类</span><br><span class="hljs-keyword">class</span> <span class="hljs-title">Cat</span> <span class="hljs-title">extend</span> <span class="hljs-title">Animal</span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">eat</span>()</span>&#123;<br>        System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">&quot;猫吃东西&quot;</span>);<br>    &#125;<br>&#125;<br><br>Anilmal animal = <span class="hljs-keyword">new</span> Cat();<br><br></code></pre></td></tr></table></figure>
+
+<p><strong>继承的特性</strong></p>
+<ul>
+<li>子类拥有父类非私有的属性和方法</li>
+<li>子类可以拥有自己的属性和方法，即子类可以对父类进行扩展</li>
+<li>子类可以用自己的方式实现父类的方法，即子类可以覆盖父类的方法</li>
+<li>子类可以继承父类的构造函数，子类可以用自己的构造函数来覆盖父类的构造函数</li>
+<li>Java 的继承是单继承</li>
+<li>提高了类之间的耦合度，使得类之间的关系更加清晰</li>
+</ul>
+<h6 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h6><p>多态分为<strong>编译时多态</strong>和<strong>运行时多态</strong></p>
+<ul>
+<li>编译时多态主要指方法的重载，即方法的重写</li>
+<li>运行时多态，指的是程序中定义的对象引用所指向的具体类型，在运行期间才确定。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//  父类</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Animal</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">eat</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;吃东西&quot;</span>);<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">//  子类</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Cat</span> extend Animal&#123;<br>    <span class="hljs-comment">//  编译时多态</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">eat</span><span class="hljs-params">()</span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;猫吃东西&quot;</span>);<br>    &#125;<br>&#125;<br><br><span class="hljs-type">Anilmal</span> <span class="hljs-variable">animal</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Cat</span>();<br><span class="hljs-comment">//  运行时多态</span><br>animal.eat();<br><br></code></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="3-JDK-JRE-JVM"><a href="#3-JDK-JRE-JVM" class="headerlink" title="3.JDK JRE JVM"></a>3.JDK JRE JVM</h4><p><strong><em>JDK</em></strong> Java Development Kit,即 Java 开发工具包，用于编译 Java 程序<br><strong><em>JRE</em></strong> Java Runtime Environment,即 Java 运行环境，用于运行 Java 程序<br><strong><em>JVM</em></strong> Java Virtual Machine,即 Java 虚拟机,是 Java 实现跨平台最核心的部分。用于运行 Java 程序。</p>
+<hr>
+<h4 id="4-x3D-x3D-和-equals-比较"><a href="#4-x3D-x3D-和-equals-比较" class="headerlink" title="4.&#x3D;&#x3D;和 equals 比较"></a>4.&#x3D;&#x3D;和 equals 比较</h4><p>&#x3D;&#x3D; 对于基本类型是值的比较，对于引用类型是地址的比较<br>equals 默认是引用比较，但很多类会重写 equals 方法，使之成为值的比较，如 String，Integer，Double 等。</p>
+<hr>
+<h4 id="5-hashCode-和-equals"><a href="#5-hashCode-和-equals" class="headerlink" title="5.hashCode 和 equals"></a>5.hashCode 和 equals</h4><p>结论：</p>
+<ul>
+<li>hashCode 相等，equals 不一定相等</li>
+<li>hashCode 不相等，equals 一定不相等</li>
+<li>equals 相等，hashCode 一定相等</li>
+<li>equals 不相等，hashCode 一定不相等</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">Integer</span> <span class="hljs-variable">aInt</span> <span class="hljs-operator">=</span> <span class="hljs-number">97</span>;<br><span class="hljs-type">Integer</span> <span class="hljs-variable">aStr</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;a&quot;</span>;<br><br>System.out.println(aInt.hashCode());<br>System.out.println(aStr.hashCode());<br><br></code></pre></td></tr></table></figure>
+
+<p>输出值都是 <code>97</code></p>
+<p><strong>重写 equals 必须重写 hashCode</strong>:需要遵循 <strong>equals 相等，hashCode 一定相等</strong></p>
+<hr>
+<h4 id="6-final"><a href="#6-final" class="headerlink" title="6.final"></a>6.final</h4><ul>
+<li>final 关键字，用于修饰类，方法，属性，变量，表达式，类型等</li>
+<li>final 修饰的累叫做<strong>最终类</strong>，该累不能被继承（String）</li>
+<li>final 修饰的方法不能被重写</li>
+<li>final 修饰的变量叫常量，必须初始化，不能被修改</li>
+</ul>
+<hr>
+<h4 id="7-String、StringBuffer、StringBuilder"><a href="#7-String、StringBuffer、StringBuilder" class="headerlink" title="7.String、StringBuffer、StringBuilder"></a>7.String、StringBuffer、StringBuilder</h4><p>String: 字符串类，用于存储字符串，不可变，线程安全<br>StringBuffer: 字符串缓冲区，用于存储字符串，可变，线程安全<br>StringBuilder: 字符串构造器，用于存储字符串，可变，线程不安全</p>
+<p>StringBuffer 实现方法里，通过使用 Syncronized 来保证线程安全<br>StringBuilder 没有使用 Syncronized，线程不安全</p>
+<hr>
+<h4 id="8-基础数据类型"><a href="#8-基础数据类型" class="headerlink" title="8.基础数据类型"></a>8.基础数据类型</h4><p>基础数据类型: byte, short, int, long, float, double, char, boolean<br>自动转型是从低到高、高到低必须强转。</p>
+<hr>
+<h4 id="9-重载和重写的区别"><a href="#9-重载和重写的区别" class="headerlink" title="9.重载和重写的区别"></a>9.重载和重写的区别</h4><ul>
+<li>重写(Override)：</li>
+</ul>
+<p>方法名相同，方法参数相同，返回类型相同。一个在父类，一个在子类。</p>
+<ul>
+<li>重载(Overload)：</li>
+</ul>
+<p>方法名相同，方法参数不相同，返回值可以不同，用于同一类内。</p>
+<hr>
+<h4 id="10-接口和抽象类的区别"><a href="#10-接口和抽象类的区别" class="headerlink" title="10.接口和抽象类的区别"></a>10.接口和抽象类的区别</h4><p><strong><em>抽象类：</em></strong><br>抽象类是用来描述抽象行为的。比如 Animal，我们并不知道具体会有哪些行为，只有具体的动物，如 Cat、Dog 才具有行为，才能够被实例化。抽象类是<strong>实现多态的一种机制</strong>，它可以包含具体的方法。也可以包含抽象方法，而继承它的子类必须实现这些抽线方法。<br>抽象类具有一下特性：</p>
+<ol>
+<li>抽象类不能被实例化，但可以有构造函数</li>
+<li>抽象方法必须由子类进行重写</li>
+<li>只要包含一个抽象方法，就必须定义为抽象类</li>
+<li>抽象类中可以包含具体的方法，也可以不包含抽象方法</li>
+<li>抽象类可以包含普通的成员变量</li>
+<li>抽象类也可以包含静态成员变量</li>
+<li>子类中的抽象方法，不能与父类的抽象方法相同</li>
+<li>abstract 不能与 private、static、final、native 共同使用</li>
+</ol>
+<p><strong><em>接口：</em></strong><br>接口通过 interface 关键字实现，接口不是类，因此不能实例化。实现类实现接口，必须实现接口所有方法。</p>
+<p>接口是抽象类的延伸，Java 不能多重继承，但是可以多重实现接口。<br>接口有一下特性：</p>
+<ol>
+<li>接口中不能有构造方法</li>
+<li>接口的所有方法自动被声明为 public，而且只能是 public，使用其他会导致编译错误</li>
+<li>接口可以定义“成员变量”，而且会自动转化</li>
+<li>接口所有方法都是抽象的，不能有方法体，也不能包含静态方法</li>
+<li>实现接口的非抽象类必须实现接口的所有方法，而抽象类不用</li>
+<li>不能使用new关键字实例化接口，因为接口是不能实例化的</li>
+<li>在实现多接口的时候，一定要注意方法名的重复，否则会导致编译错误</li>
+</ol>
+<p><em><strong>总结：</strong></em></p>
+<ol>
+<li>抽象类是一种继承管理，一个类只能有一个父类，但可以有多个接口</li>
+<li>在抽象类中可以拥有自己的成员变量和非抽象方法，但接口只能存在静态的不可变的成员数据，切接口的所有方法都是抽象的。</li>
+<li>抽象类和接口所反映的设计理念是不同的。抽象类代表的是“is-a”关系，而接口代表的是“like-a”的关系。</li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/java/">java</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%9F%BA%E7%A1%80/">基础</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%85%AB%E8%82%A1%E6%96%87/">八股文</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/15719.html">
+                        <span class="hidden-mobile">GitHub Pages + Hexo 搭建</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
