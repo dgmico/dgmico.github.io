@@ -16,23 +16,22 @@
   <meta name="author" content="Dgmico">
   <meta name="keywords" content="">
   
-    <meta name="description" content="传统创建文章的方式1hexo new &lt;title&gt;  创建草稿1hexo new draft &lt;title&gt;  预览草稿1hexo s --draft  发布草稿1hexo P &lt;title&gt;  生产静态文件1hexo g  发布文章1hexo d">
+    <meta name="description" content="Java学习-JVM-011.Java类加载器类加载器就是加载所有类的工具，它加载的类在内存中只有一份，所以类加载器是单例的。也就是堆中的Class对象不可以重复加载 主要有以下四类：  BootstrapClassLoader 启动类加载器：加载&#x2F;lib下的jar包和类。由C++编写。  ExtenssionClassLoader 扩展类加载器：加载&#x2F;lib&#x2F;ext">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo文章的相关操作">
-<meta property="og:url" content="http://example.com/posts/60892.html">
+<meta property="og:title" content="Java学习-JVM-01">
+<meta property="og:url" content="http://example.com/posts/3217.html">
 <meta property="og:site_name" content="Mico&#39;s">
-<meta property="og:description" content="传统创建文章的方式1hexo new &lt;title&gt;  创建草稿1hexo new draft &lt;title&gt;  预览草稿1hexo s --draft  发布草稿1hexo P &lt;title&gt;  生产静态文件1hexo g  发布文章1hexo d">
+<meta property="og:description" content="Java学习-JVM-011.Java类加载器类加载器就是加载所有类的工具，它加载的类在内存中只有一份，所以类加载器是单例的。也就是堆中的Class对象不可以重复加载 主要有以下四类：  BootstrapClassLoader 启动类加载器：加载&#x2F;lib下的jar包和类。由C++编写。  ExtenssionClassLoader 扩展类加载器：加载&#x2F;lib&#x2F;ext">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-04-20T09:45:54.000Z">
-<meta property="article:modified_time" content="2022-04-20T09:45:55.222Z">
+<meta property="og:image" content="http://example.com/imgs/3217/Java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8.png">
+<meta property="article:published_time" content="2022-04-21T08:44:14.000Z">
+<meta property="article:modified_time" content="2022-04-21T09:14:55.366Z">
 <meta property="article:author" content="Dgmico">
-<meta property="article:tag" content="hexo">
-<meta property="article:tag" content="草稿">
-<meta property="article:tag" content="发布">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/imgs/3217/Java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8.png">
   
   
-  <title>Hexo文章的相关操作 - Mico&#39;s</title>
+  <title>Java学习-JVM-01 - Mico&#39;s</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -178,7 +177,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Hexo文章的相关操作">
+            <span class="h2" id="subtitle" title="Java学习-JVM-01">
               
             </span>
 
@@ -188,8 +187,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-04-20 17:45" pubdate>
-        2022年4月20日 下午
+      <time datetime="2022-04-21 16:44" pubdate>
+        2022年4月21日 下午
       </time>
     </span>
   
@@ -199,7 +198,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      122 字
+      850 字
     </span>
   
 
@@ -208,7 +207,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2 分钟
+      8 分钟
     </span>
   
 
@@ -237,37 +236,44 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hexo文章的相关操作</h1>
+            <h1 style="display: none">Java学习-JVM-01</h1>
             
             <div class="markdown-body">
-              <h3 id="传统创建文章的方式"><a href="#传统创建文章的方式" class="headerlink" title="传统创建文章的方式"></a>传统创建文章的方式</h3><figure class="highlight gauss"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs gauss">hexo <span class="hljs-keyword">new</span> &lt;<span class="hljs-built_in">title</span>&gt;<br></code></pre></td></tr></table></figure>
-
-<h3 id="创建草稿"><a href="#创建草稿" class="headerlink" title="创建草稿"></a>创建草稿</h3><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gauss">hexo <span class="hljs-keyword">new</span> draft &lt;<span class="hljs-built_in">title</span>&gt;<br></code></pre></td></tr></table></figure>
-
-<h3 id="预览草稿"><a href="#预览草稿" class="headerlink" title="预览草稿"></a>预览草稿</h3><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">hexo s <span class="hljs-comment">--draft</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="发布草稿"><a href="#发布草稿" class="headerlink" title="发布草稿"></a>发布草稿</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml">hexo P <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="生产静态文件"><a href="#生产静态文件" class="headerlink" title="生产静态文件"></a>生产静态文件</h3><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo g</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h3><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo d</span><br></code></pre></td></tr></table></figure>
+              <h1 id="Java学习-JVM-01"><a href="#Java学习-JVM-01" class="headerlink" title="Java学习-JVM-01"></a>Java学习-JVM-01</h1><h4 id="1-Java类加载器"><a href="#1-Java类加载器" class="headerlink" title="1.Java类加载器"></a>1.Java类加载器</h4><p>类加载器就是加载所有类的工具，它加载的类在内存中只有一份，所以类加载器是单例的。也就是堆中的Class对象不可以重复加载</p>
+<p>主要有以下四类：</p>
+<ul>
+<li><p>BootstrapClassLoader 启动类加载器：<br>加载&#x2F;lib下的jar包和类。由C++编写。</p>
+</li>
+<li><p>ExtenssionClassLoader 扩展类加载器：<br>加载&#x2F;lib&#x2F;ext下的jar包和类。由Java编写。</p>
+</li>
+<li><p>AppClassLoader 应用类加载器：<br>加载当前classPath下的jar包和类。由Java编写。</p>
+</li>
+<li><p>自定义类加载器：<br>通过继承<code>java.lang.ClassLoader</code>类，实现自定义类加载器。</p>
+</li>
+</ul>
+<p><img src="/../imgs/3217/Java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8.png" srcset="/img/loading.gif" lazyload></p>
+<hr>
+<h4 id="2-双亲委派模型"><a href="#2-双亲委派模型" class="headerlink" title="2.双亲委派模型"></a>2.双亲委派模型</h4><p>当类加载器收到一个类的加载请求时，它首先不会自己尝试去加载它，而是把这个请求委托给父类加载器去完成，这样层层委派，因此所有的加载请求最终都会传送到顶层的启动类加载器中，只有当父类加载器反馈自己无法完成这个加载请求时，子加载器才会自己尝试去加载。</p>
+<p>双亲委派模型的具体实现代码在 <code>java.lang.ClassLoader</code> 类中。此类的 <code>loadClass()</code> 方法是双亲委派模型的核心：先检查类是否已经加载过，如果没有则让父类加载器去加载。当父类加载器加载失败时会抛出 <code>ClassNotFoundException</code> 异常,此时再自己尝试加载。</p>
+<p>如果没有双亲委派模型，而是由各个类加载器自行加载的话，内存里面可能会出现很多个相同的类，那么类之间的比较结果及类的唯一性将无法保证。</p>
+<hr>
+<h4 id="3-GC如何判断对象可以被回收"><a href="#3-GC如何判断对象可以被回收" class="headerlink" title="3.GC如何判断对象可以被回收"></a>3.GC如何判断对象可以被回收</h4><ul>
+<li><p>引用计数法：<br>设置引用计数器，对象被引用时计数器加1，引用失效时计数器减1，当计数器为0时，对象可以被回收。会存在对象间循环引用的问题，一般不使用这种方法。</p>
+</li>
+<li><p>可达性分析：<br>通过GC Roots 的根对象作为起始节点，从这些节点开始，根据引用关系向下搜索，如果某个对象没有被搜索到，则会被标记为垃圾。可作为GC Roots的对象有：</p>
+<ol>
+<li>虚拟机栈和本地方法栈中引用的对象</li>
+<li>类静态属性引用的对象</li>
+<li>常量引用的对象</li>
+</ol>
+</li>
+</ul>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/hexo/">hexo</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E8%8D%89%E7%A8%BF/">草稿</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E5%8F%91%E5%B8%83/">发布</a>
-                    
-                  </div>
                 
               </div>
               
@@ -282,9 +288,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/10146.html">
+                      <a href="/posts/6646.html">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Java学习-集合-01</span>
+                        <span class="hidden-mobile">Java学习-多线程-01</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -292,8 +298,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/60906.html">
-                        <span class="hidden-mobile">Java学习-基础</span>
+                      <a href="/posts/30825.html">
+                        <span class="hidden-mobile">Java学习-基础-02</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

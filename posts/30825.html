@@ -16,23 +16,22 @@
   <meta name="author" content="Dgmico">
   <meta name="keywords" content="">
   
-    <meta name="description" content="传统创建文章的方式1hexo new &lt;title&gt;  创建草稿1hexo new draft &lt;title&gt;  预览草稿1hexo s --draft  发布草稿1hexo P &lt;title&gt;  生产静态文件1hexo g  发布文章1hexo d">
+    <meta name="description" content="Java 学习-基础-0211.什么是字节码？采用字节码的好处是什么 字节码：Java 引入了虚拟机的概念，即在机器和 编译程序 之间，加入了一层抽象的虚拟机。 编译程序 只需面向虚拟机，生成虚拟机能理解的代码，然后由解释器将虚拟机代码转换成特定的机器代码来执行。这种虚拟机能理解的代码就是 字节码 。（即扩展名为 .class 的文件）。  采用字节码的好处：  编译型语言效率比解释型语言高 字节">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo文章的相关操作">
-<meta property="og:url" content="http://example.com/posts/60892.html">
+<meta property="og:title" content="Java学习-基础-02">
+<meta property="og:url" content="http://example.com/posts/30825.html">
 <meta property="og:site_name" content="Mico&#39;s">
-<meta property="og:description" content="传统创建文章的方式1hexo new &lt;title&gt;  创建草稿1hexo new draft &lt;title&gt;  预览草稿1hexo s --draft  发布草稿1hexo P &lt;title&gt;  生产静态文件1hexo g  发布文章1hexo d">
+<meta property="og:description" content="Java 学习-基础-0211.什么是字节码？采用字节码的好处是什么 字节码：Java 引入了虚拟机的概念，即在机器和 编译程序 之间，加入了一层抽象的虚拟机。 编译程序 只需面向虚拟机，生成虚拟机能理解的代码，然后由解释器将虚拟机代码转换成特定的机器代码来执行。这种虚拟机能理解的代码就是 字节码 。（即扩展名为 .class 的文件）。  采用字节码的好处：  编译型语言效率比解释型语言高 字节">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-04-20T09:45:54.000Z">
-<meta property="article:modified_time" content="2022-04-20T09:45:55.222Z">
+<meta property="og:image" content="http://example.com/imgs/30825/%E4%BD%93%E7%B3%BB%E5%9B%BE.png">
+<meta property="article:published_time" content="2022-04-21T07:46:32.417Z">
+<meta property="article:modified_time" content="2022-04-21T08:44:31.271Z">
 <meta property="article:author" content="Dgmico">
-<meta property="article:tag" content="hexo">
-<meta property="article:tag" content="草稿">
-<meta property="article:tag" content="发布">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/imgs/30825/%E4%BD%93%E7%B3%BB%E5%9B%BE.png">
   
   
-  <title>Hexo文章的相关操作 - Mico&#39;s</title>
+  <title>Java学习-基础-02 - Mico&#39;s</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -178,7 +177,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Hexo文章的相关操作">
+            <span class="h2" id="subtitle" title="Java学习-基础-02">
               
             </span>
 
@@ -188,8 +187,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-04-20 17:45" pubdate>
-        2022年4月20日 下午
+      <time datetime="2022-04-21 15:46" pubdate>
+        2022年4月21日 下午
       </time>
     </span>
   
@@ -199,7 +198,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      122 字
+      921 字
     </span>
   
 
@@ -208,7 +207,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2 分钟
+      8 分钟
     </span>
   
 
@@ -237,37 +236,55 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hexo文章的相关操作</h1>
+            <h1 style="display: none">Java学习-基础-02</h1>
             
             <div class="markdown-body">
-              <h3 id="传统创建文章的方式"><a href="#传统创建文章的方式" class="headerlink" title="传统创建文章的方式"></a>传统创建文章的方式</h3><figure class="highlight gauss"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs gauss">hexo <span class="hljs-keyword">new</span> &lt;<span class="hljs-built_in">title</span>&gt;<br></code></pre></td></tr></table></figure>
-
-<h3 id="创建草稿"><a href="#创建草稿" class="headerlink" title="创建草稿"></a>创建草稿</h3><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gauss">hexo <span class="hljs-keyword">new</span> draft &lt;<span class="hljs-built_in">title</span>&gt;<br></code></pre></td></tr></table></figure>
-
-<h3 id="预览草稿"><a href="#预览草稿" class="headerlink" title="预览草稿"></a>预览草稿</h3><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">hexo s <span class="hljs-comment">--draft</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="发布草稿"><a href="#发布草稿" class="headerlink" title="发布草稿"></a>发布草稿</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml">hexo P <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="生产静态文件"><a href="#生产静态文件" class="headerlink" title="生产静态文件"></a>生产静态文件</h3><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo g</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h3><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo d</span><br></code></pre></td></tr></table></figure>
-
+              <h1 id="Java-学习-基础-02"><a href="#Java-学习-基础-02" class="headerlink" title="Java 学习-基础-02"></a>Java 学习-基础-02</h1><h4 id="11-什么是字节码？采用字节码的好处是什么"><a href="#11-什么是字节码？采用字节码的好处是什么" class="headerlink" title="11.什么是字节码？采用字节码的好处是什么"></a>11.什么是字节码？采用字节码的好处是什么</h4><ul>
+<li><p>字节码：<br>Java 引入了虚拟机的概念，即在机器和 <strong>编译程序</strong> 之间，加入了一层抽象的虚拟机。 <strong>编译程序</strong> 只需面向虚拟机，生成虚拟机能理解的代码，然后由解释器将虚拟机代码转换成特定的机器代码来执行。这种虚拟机能理解的代码就是 <strong><em>字节码</em></strong> 。（即扩展名为 <code>.class</code> 的文件）。</p>
+</li>
+<li><p>采用字节码的好处：</p>
+<ul>
+<li>编译型语言效率比解释型语言高</li>
+<li>字节码面向虚拟机，不针对任一操作系统，可以在任何操作系统上运行</li>
+<li>在编译期间，编译器可以检查代码的正确性，并且可以提供更多的信息</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="12-Java-中的异常体系"><a href="#12-Java-中的异常体系" class="headerlink" title="12.Java 中的异常体系"></a>12.Java 中的异常体系</h4><p><strong>体系图</strong></p>
+<p><img src="/../imgs/30825/%E4%BD%93%E7%B3%BB%E5%9B%BE.png" srcset="/img/loading.gif" lazyload></p>
+<p>Java 异常分为 **<em>Error（程序无法处理的错误）</em>**，和 **<em>Exception（程序本身可以处理的异常）</em>**。 这两类均继承 Throwable</p>
+<p><strong>Error</strong> 常见的有 StackOverFlowError、OutOfMemoryError 等等。<br><strong>Exception</strong> 分为 <strong><em>运行时异常</em></strong> 和 <strong><em>编译时异常</em></strong> 。</p>
+<ul>
+<li><strong><em>运行时异常</em></strong><br>可以利用 <code>try catch</code> 捕获，也可以通过 <code>throws</code> 来声明。</li>
+</ul>
+<p>RuntimeException 是运行期异常，可以被捕获和处理。常见的 RuntimeException 有：</p>
+<ul>
+<li>NullPointerException 空指针异常</li>
+<li>ArrayIndexOutOfBoundsException 数组越界异常</li>
+<li>ArithmeticException 除数为 0 异常</li>
+<li>ClassCastException 类型强制转换异常</li>
+</ul>
+<p><strong><em>编译时异常</em></strong> 必须处理，不处理的话，编译器会报错。<br>除 RuntimeException 以外的异常，都是编译时异常。在编译阶段 Java 编译器会检查此类异常并强制程序捕获和处理异常，即强制要求程序在可能出现此类异常的地方进行捕获和处理。常见的有：</p>
+<ul>
+<li>IOException 输入输出异常</li>
+<li>InterruptedException 线程中断异常</li>
+<li>ClassNotFoundException 类未找到异常</li>
+<li>NoSuchMethodException 方法未找到异常</li>
+<li>SQLException SQL 异常</li>
+</ul>
+<p><strong>throw和throws的区别</strong></p>
+<ul>
+<li>throw 一般是用在方法体内部，由开发者定义当程序语句出现问题后，抛出异常</li>
+<li>throws 一般用于方法声明上，代表该方法可能会抛出的异常列表</li>
+</ul>
+<hr>
+<h4 id="13"><a href="#13" class="headerlink" title="13"></a>13</h4>
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/hexo/">hexo</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E8%8D%89%E7%A8%BF/">草稿</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E5%8F%91%E5%B8%83/">发布</a>
-                    
-                  </div>
                 
               </div>
               
@@ -282,9 +299,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/10146.html">
+                      <a href="/posts/3217.html">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Java学习-集合-01</span>
+                        <span class="hidden-mobile">Java学习-JVM-01</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -292,8 +309,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/60906.html">
-                        <span class="hidden-mobile">Java学习-基础</span>
+                      <a href="/posts/10146.html">
+                        <span class="hidden-mobile">Java学习-集合-01</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
