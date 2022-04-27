@@ -16,16 +16,17 @@
   <meta name="author" content="Dgmico">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Java学习-多线程-011.线程的生命周期、线程有几种状态生命周期：  初始化(NEW) 运行(RUNNABLE) 阻塞(BLOCKED) 等待(WAITING) 有时限等待(TIMED_WAITING) 死亡(TERMINATED)  线程状态：有6个状态： 123456789&#x2F;&#x2F; Thread.State 源码public enum State &amp;#123;    NEW,    RUNNA">
+    <meta name="description" content="Java 学习-多线程-011.线程的生命周期、线程有几种状态生命周期：  初始化(NEW) 运行(RUNNABLE) 阻塞(BLOCKED) 等待(WAITING) 有时限等待(TIMED_WAITING) 死亡(TERMINATED)  线程状态：有 6 个状态： 123456789&#x2F;&#x2F; Thread.State 源码public enum State &amp;#123;    NEW,    RU">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java学习-多线程-01">
 <meta property="og:url" content="http://example.com/posts/6646.html">
 <meta property="og:site_name" content="Mico&#39;s">
-<meta property="og:description" content="Java学习-多线程-011.线程的生命周期、线程有几种状态生命周期：  初始化(NEW) 运行(RUNNABLE) 阻塞(BLOCKED) 等待(WAITING) 有时限等待(TIMED_WAITING) 死亡(TERMINATED)  线程状态：有6个状态： 123456789&#x2F;&#x2F; Thread.State 源码public enum State &amp;#123;    NEW,    RUNNA">
+<meta property="og:description" content="Java 学习-多线程-011.线程的生命周期、线程有几种状态生命周期：  初始化(NEW) 运行(RUNNABLE) 阻塞(BLOCKED) 等待(WAITING) 有时限等待(TIMED_WAITING) 死亡(TERMINATED)  线程状态：有 6 个状态： 123456789&#x2F;&#x2F; Thread.State 源码public enum State &amp;#123;    NEW,    RU">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/imgs/6646/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png">
+<meta property="og:image" content="http://example.com/imgs/6646/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F2.png">
 <meta property="article:published_time" content="2022-04-21T09:17:52.000Z">
-<meta property="article:modified_time" content="2022-04-21T09:42:05.790Z">
+<meta property="article:modified_time" content="2022-04-27T03:51:43.930Z">
 <meta property="article:author" content="Dgmico">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/imgs/6646/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png">
@@ -198,7 +199,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      338 字
+      3.7k 字
     </span>
   
 
@@ -207,7 +208,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3 分钟
+      32 分钟
     </span>
   
 
@@ -239,7 +240,7 @@
             <h1 style="display: none">Java学习-多线程-01</h1>
             
             <div class="markdown-body">
-              <h1 id="Java学习-多线程-01"><a href="#Java学习-多线程-01" class="headerlink" title="Java学习-多线程-01"></a>Java学习-多线程-01</h1><h4 id="1-线程的生命周期、线程有几种状态"><a href="#1-线程的生命周期、线程有几种状态" class="headerlink" title="1.线程的生命周期、线程有几种状态"></a>1.线程的生命周期、线程有几种状态</h4><p><strong>生命周期：</strong></p>
+              <h1 id="Java-学习-多线程-01"><a href="#Java-学习-多线程-01" class="headerlink" title="Java 学习-多线程-01"></a>Java 学习-多线程-01</h1><h4 id="1-线程的生命周期、线程有几种状态"><a href="#1-线程的生命周期、线程有几种状态" class="headerlink" title="1.线程的生命周期、线程有几种状态"></a>1.线程的生命周期、线程有几种状态</h4><p><strong>生命周期：</strong></p>
 <ol>
 <li>初始化(NEW)</li>
 <li>运行(RUNNABLE)</li>
@@ -248,12 +249,92 @@
 <li>有时限等待(TIMED_WAITING)</li>
 <li>死亡(TERMINATED)</li>
 </ol>
-<p><strong>线程状态：</strong><br>有6个状态：</p>
+<p><strong>线程状态：</strong><br>有 6 个状态：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// Thread.State 源码</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">enum</span> <span class="hljs-title class_">State</span> &#123;<br>    NEW,<br>    RUNNABLE,<br>    BLOCKED,<br>    WAITING,<br>    TIMED_WAITING,<br>    TERMINATED;<br>&#125;<br></code></pre></td></tr></table></figure>
-<p>因为阻塞(BLOCKED)、等待(WAITING)、有时限等待(TIMED_WAITING)三种状态都是阻塞状态,没有CPU的使用权，所以可以用下图表示:</p>
+
+<p>因为阻塞(BLOCKED)、等待(WAITING)、有时限等待(TIMED_WAITING)三种状态都是阻塞状态,没有 CPU 的使用权，所以可以用下图表示:</p>
 <p><img src="/../imgs/6646/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" srcset="/img/loading.gif" lazyload></p>
 <hr>
-<h4 id="2-sleep-、wait-、join-、yield-区别"><a href="#2-sleep-、wait-、join-、yield-区别" class="headerlink" title="2.sleep()、wait()、join()、yield()区别"></a>2.sleep()、wait()、join()、yield()区别</h4>
+<h4 id="2-sleep-、wait-、join-、yield-区别"><a href="#2-sleep-、wait-、join-、yield-区别" class="headerlink" title="2.sleep()、wait()、join()、yield()区别"></a>2.sleep()、wait()、join()、yield()区别</h4><p><img src="/../imgs/6646/%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F2.png" srcset="/img/loading.gif" lazyload><br><strong>sleep</strong></p>
+<ul>
+<li>sleep 方法是 Thread 的静态方法</li>
+<li>sleep 使当前线程进入阻塞状态，在指定时间内不会执行</li>
+<li>sleep 期间，不会释放锁</li>
+</ul>
+<p><strong>wait</strong></p>
+<ul>
+<li>wait 方法是 Object 的非静态方法</li>
+<li>在其他线程调用 notify 或者 notifyAll 方法前，线程释放当前所占用的锁标识</li>
+<li>当前线程必须拥有当前对象锁</li>
+<li>wait 和 notify 必须在 synchronized 代码块中使用</li>
+</ul>
+<p><strong>yield</strong></p>
+<ul>
+<li>暂停当前线程对象</li>
+</ul>
+<p><strong>join</strong></p>
+<ul>
+<li>join 方法是 Thread 的静态方法</li>
+<li>等待调用 join 方法的线程结束，在继续执行</li>
+</ul>
+<hr>
+<h4 id="3-对线程安全的理解"><a href="#3-对线程安全的理解" class="headerlink" title="3.对线程安全的理解"></a>3.对线程安全的理解</h4><p>当多个线程访问一个对象时，如果不用考虑这些线程在运行时环境下的调度和交替执行，也不需要进行额外的同步，或者在调用方法进行任何其他的协调操作，调用这个对象的行为都可以获得正确的结果，那么这个对象时线程安全的。</p>
+<hr>
+<h4 id="4-Thread、Runable-的区别"><a href="#4-Thread、Runable-的区别" class="headerlink" title="4.Thread、Runable 的区别"></a>4.Thread、Runable 的区别</h4><ul>
+<li>Thread 的实现方式是继承</li>
+<li>Runable 的实现方式是实现接口</li>
+<li>Thread 实现了 Runable 接口，并进行了扩展</li>
+</ul>
+<hr>
+<h4 id="5-对守护线程的理解"><a href="#5-对守护线程的理解" class="headerlink" title="5.对守护线程的理解"></a>5.对守护线程的理解</h4><p>守护线程是运行在后台的一种特殊进程。它独立于控制台，并且不会影响控制台的状态。守护线程的主要作用是负责系统的内存管理，以及系统的安全措施。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 守护线程</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ThreadDemo</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">Thread</span> <span class="hljs-variable">thread</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Runnable</span>() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> &#123;<br>                <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) &#123;<br>                    System.out.println(<span class="hljs-string">&quot;守护线程&quot;</span>);<br>                &#125;<br>            &#125;<br>        &#125;);<br>        thread.setDaemon(<span class="hljs-literal">true</span>);<br>        thread.start();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="6-ThreadLocal-的原理和使用场景"><a href="#6-ThreadLocal-的原理和使用场景" class="headerlink" title="6.ThreadLocal 的原理和使用场景"></a>6.ThreadLocal 的原理和使用场景</h4><ul>
+<li><a href="#ThreadLocal%E6%98%AF%E4%BB%80%E4%B9%88">ThreadLocal 是什么</a></li>
+<li><a href="#ThreadLocal%E7%9A%84%E5%8E%9F%E7%90%86">ThreadLocal 的原理</a></li>
+<li><a href="#ThreadLocal%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF">ThreadLocal 的使用场景</a></li>
+</ul>
+<h6 id="ThreadLocal-是什么"><a href="#ThreadLocal-是什么" class="headerlink" title="ThreadLocal 是什么"></a>ThreadLocal 是什么</h6><p>ThreadLocal 的作用是给线程提供一个 作用域是<strong>整个线程</strong>，生命周期是<strong>线程存活时期</strong>的 **<em>线程局部变量</em>**。每个线程都可以通过 ThreadLocal 对象来访问属于自己的数据。总的来说有以下两个特点：</p>
+<ol>
+<li>线程内共享，线程运行到那里了都可以使用 ThreadLocal 中存储的变量</li>
+<li>线程间隔离，线程只能看到自己存储在 ThreadLocal 中的变量，其他线程不能访问</li>
+</ol>
+<h6 id="ThreadLocal-的原理"><a href="#ThreadLocal-的原理" class="headerlink" title="ThreadLocal 的原理"></a>ThreadLocal 的原理</h6><p>ThreadLocal 的原理是：在线程中存储一个 ThreadLocal 对象，每个线程都有自己的 ThreadLocal 对象，每个线程都有自己的 ThreadLocal 对象中的变量。</p>
+<p><strong>void set(T value)</strong><br>set 方法设置当前线程中 threadLocal 变量的值，该方法的源码为：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">set</span><span class="hljs-params">(T value)</span> &#123;<br>	  <span class="hljs-comment">//1. 获取当前线程实例对象</span><br>    <span class="hljs-type">Thread</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> Thread.currentThread();<br><br>	  <span class="hljs-comment">//2. 通过当前线程实例获取到ThreadLocalMap对象</span><br>    <span class="hljs-type">ThreadLocalMap</span> <span class="hljs-variable">map</span> <span class="hljs-operator">=</span> getMap(t);<br><br>    <span class="hljs-keyword">if</span> (map != <span class="hljs-literal">null</span>)<br>			<span class="hljs-comment">//3. 如果Map不为null,则以当前threadLocl实例为key,值为value进行存入</span><br>    	map.set(<span class="hljs-built_in">this</span>, value);<br>    <span class="hljs-keyword">else</span><br>			<span class="hljs-comment">//4.map为null,则新建ThreadLocalMap并存入value</span><br>      createMap(t, value);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>value 值被存放在 <strong>ThreadLocalMap</strong> 里，由每个 Thread 各自维护，每个 Thread 都有自己的 ThreadLocalMap，每个 Thread 都有自己的 ThreadLocalMap 中的变量。</p>
+<h6 id="ThreadLocal-的使用场景"><a href="#ThreadLocal-的使用场景" class="headerlink" title="ThreadLocal 的使用场景"></a>ThreadLocal 的使用场景</h6><ol>
+<li>ThreadLocal 不是用来解决共享对象的多线程访问问题。</li>
+<li>ThreadLocal 是让每个不同的线程拥有属于自己的数据容器（ ** ThreadLocalMap ** ）</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ThreadLocalDemo</span> &#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> ThreadLocal&lt;SimpleDateFormat&gt; sdf = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ThreadLocal</span>&lt;&gt;();<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">ExecutorService</span> <span class="hljs-variable">executorService</span> <span class="hljs-operator">=</span> Executors.newFixedThreadPool(<span class="hljs-number">10</span>);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">100</span>; i++) &#123;<br>            executorService.submit(<span class="hljs-keyword">new</span> <span class="hljs-title class_">DateUtil</span>(<span class="hljs-string">&quot;2019-11-25 09:00:&quot;</span> + i % <span class="hljs-number">60</span>));<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">DateUtil</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Runnable</span> &#123;<br>        <span class="hljs-keyword">private</span> String date;<br><br>        <span class="hljs-keyword">public</span> <span class="hljs-title function_">DateUtil</span><span class="hljs-params">(String date)</span> &#123;<br>            <span class="hljs-built_in">this</span>.date = date;<br>        &#125;<br><br>        <span class="hljs-meta">@Override</span><br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> &#123;<br>            <span class="hljs-keyword">if</span> (sdf.get() == <span class="hljs-literal">null</span>) &#123;<br>                sdf.set(<span class="hljs-keyword">new</span> <span class="hljs-title class_">SimpleDateFormat</span>(<span class="hljs-string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>));<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">try</span> &#123;<br>                    <span class="hljs-type">Date</span> <span class="hljs-variable">date</span> <span class="hljs-operator">=</span> sdf.get().parse(<span class="hljs-built_in">this</span>.date);<br>                    System.out.println(date);<br>                &#125; <span class="hljs-keyword">catch</span> (ParseException e) &#123;<br>                    e.printStackTrace();<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="7-ThreadLocal内存泄漏的原因，如何避免"><a href="#7-ThreadLocal内存泄漏的原因，如何避免" class="headerlink" title="7.ThreadLocal内存泄漏的原因，如何避免"></a>7.ThreadLocal内存泄漏的原因，如何避免</h4><h6 id="内存泄漏的原因"><a href="#内存泄漏的原因" class="headerlink" title="内存泄漏的原因"></a>内存泄漏的原因</h6><p>ThreadLocal 数据实际上是存放在其内部类 ThreadLocalMap里面。 ThreadLocal 的get、set、remove方法，实际上是调用 ThreadLocalMap 的 getEntry、setEntry、removeEntry 方法。</p>
+<p>ThreadLocalMap内部通过一个Entry类型的table数组来维护数据。</p>
+<p>Entry中的key是弱引用，当threadLocal外部强引用被置为null(threadLocalInstance&#x3D;null),那么系统 GC 的时候，根据可达性分析，这个threadLocal实例就没有任何一条链路能够引用到它，这个ThreadLocal势必会被回收，这样一来，ThreadLocalMap中就会出现key为null的Entry，就没有办法访问这些key为null的Entry的value，如果当前线程再迟迟不结束的话，这些key为null的Entry的value就会一直存在一条强引用链：<br><code>Thread Ref -&gt; Thread -&gt; ThreaLocalMap -&gt; Entry -&gt; value</code><br>永远无法回收，造成内存泄漏。</p>
+<h6 id="避免"><a href="#避免" class="headerlink" title="避免"></a>避免</h6><p><strong>每次使用完线程数据，都要调用一次ThreadLocal.remove()方法手动删除Entry对象</strong></p>
+<hr>
+<h4 id="8-并发、并行、串行的区别"><a href="#8-并发、并行、串行的区别" class="headerlink" title="8.并发、并行、串行的区别"></a>8.并发、并行、串行的区别</h4><ul>
+<li>串行：时间上不可重叠发生，前一个任务还没完成，下一个任务只能等待；</li>
+<li>并行：时间上可以重叠，多个任务在<strong>同一时刻</strong>互补干扰的同时执行；</li>
+<li>并发：多个任务在<strong>同一时期内</strong>同时发生执行；</li>
+</ul>
+<hr>
+<h4 id="9-并发的三大特性"><a href="#9-并发的三大特性" class="headerlink" title="9.并发的三大特性"></a>9.并发的三大特性</h4><ul>
+<li><strong>原子性：</strong><br>原子性值指一个操作是不可分割、不可中断的要么全部执行并且执行的过程不会被任何因素打断，要么全部不执行。</li>
+<li><strong>可见性：</strong><br>可见性指的是一个线程修改了某一个共享变量时，其他线程能够立即知道这个修改。</li>
+<li><strong>有序性：</strong><br>有序性指的是一个线程的执行代码，从前往后执行，单线程下可以认为是有序的，但是并发时可能发生指令重排。</li>
+</ul>
+<hr>
+<h4 id="10-volatile"><a href="#10-volatile" class="headerlink" title="10.volatile"></a>10.volatile</h4><ul>
+<li>保证变量的内存可见性</li>
+<li>禁止volaite变量与其他变量的指令重排序</li>
+</ul>
+<p><strong>PS：重排序：为优化程序性能，对原有的指令执行顺序进行优化重新排序。重排序可能发生在多个阶段，比如编译重排序、CPU重排序等。</strong></p>
+
             </div>
             <hr>
             <div>
@@ -277,8 +358,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/3217.html">
-                        <span class="hidden-mobile">Java学习-JVM-01</span>
+                      <a href="/posts/6326.html">
+                        <span class="hidden-mobile">Java学习-多线程-02</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
